@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 import java.util.Random;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -459,8 +459,6 @@ public class Creator extends javax.swing.JFrame {
                   //int mano;
                   
                   //Aristas imprime = new Aristas();
-                  //Lo mismo el neatBens me puso es try y el catach y no se por que jajaja
-                  //Pero funciona.
                  /* try {
                       String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\Grafos\\ERDOS.txt";
                       File archivo = new File(ruta);
@@ -504,7 +502,7 @@ public class Creator extends javax.swing.JFrame {
                   System.out.println("");*/
                   
                   //****************************************************************************** BFS
-                 /*Nodos help = new Nodos();
+                 /* Nodos help = new Nodos();
                   Nodos help1 = new Nodos();
                   Nodos help2 = new Nodos();
                   String S;
@@ -616,7 +614,7 @@ public class Creator extends javax.swing.JFrame {
             Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
         }*/
 //************************************************************************************************* DFS RECURSIVO                 
-                   /*String s;
+                  /* String s;
                     int SDFS;
                     Nodos help = new Nodos();
                     Nodos help1 = new Nodos();
@@ -842,9 +840,9 @@ public class Creator extends javax.swing.JFrame {
                   
               } catch (IOException ex) {
             Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        }//*/
          //***************************************************************************DIJSTRA
-           /* Nodos help = new Nodos();
+         /*  Nodos help = new Nodos();
            Nodos help3 = new Nodos();
                
                 String NS;
@@ -874,7 +872,7 @@ public class Creator extends javax.swing.JFrame {
                   System.out.println("El nodo de inicio es "+NS);
                   ns = Integer.parseInt(NS);//convierto el valor "NS" en entero.
                   
-                  NT = NodoT.getText(); //obtengo el valor del teclado lo mando a S.
+                  NT = NodoT.getText(); //obtengo el valor del teclado lo mando a T.
                   System.out.println("El nodo de final es "+NT);
                   nt = Integer.parseInt(NT);//convierto el valor "NT" en entero.
                   
@@ -927,7 +925,7 @@ public class Creator extends javax.swing.JFrame {
                           //System.out.println("la flecha a buscar"+flecha);
                           B1 = B.get(flecha);   //Aqui obtengo la arista
                                
-                           Nodos help1 = new Nodos();
+                          Nodos help1 = new Nodos();
                           help1 = A.get(vec);
                           suma = B1.getPeso()+P;
                           
@@ -980,7 +978,7 @@ public class Creator extends javax.swing.JFrame {
                   
                                 if(PS.getId()==nt){
                                 Dijstra = true;
-                                    //System.out.println("No mames si llego");
+
                                     System.out.println("");
                                 }
                                 else{
@@ -992,8 +990,6 @@ public class Creator extends javax.swing.JFrame {
                   }
                   if(PS.getId()==nt){
                                 Dijstra = true;
-                                    System.out.println("No mames, si llego!!!!");
-                                    System.out.println("");
                                 }
                                 else{
                                 help = A.get(PS.getId());
@@ -1096,7 +1092,7 @@ public class Creator extends javax.swing.JFrame {
                       Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
                   }*/
           //**********************************************************************************************KRUSKAL
-               /*     int MAX = 0;
+                    int MAX = 0;
                     Stack<Integer> orden = new Stack<Integer>();
                     HashMap<String, Aristas> K = new HashMap<>();
                     String raya;
@@ -1317,7 +1313,7 @@ public class Creator extends javax.swing.JFrame {
                   
        //******************************************************************************************************PRIM
           
-            String NS;
+         /*   String NS;
              int ns;
              boolean  Prim = false;
              boolean VALOR = false;
@@ -1540,368 +1536,7 @@ public class Creator extends javax.swing.JFrame {
                       
                   } catch (IOException ex) {
                       Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
-                  }
-                  
-             
-       //****************************************************************************************KRUSKAL INVERSO         
-                
-       
-        Stack<Integer> ORDEN = new Stack<Integer>();
-        int MIN = fat;
-        int nn;
-        int s;
-        String U1;
-        String U2;
-        String UC1;
-        String UC2;
-        
-        HashMap<String, Aristas> CKI = new HashMap<>();//HASH DE ARISTAS
-        ArrayList<String> Quita = new ArrayList<String>();
-        int pesoso;
-        boolean KRUSKALI = false;
-        int EL = 0;
-       
-       while(pilak.empty()==false){
-                    for(int o=0; o<pilak.size();o++)
-                  {
-                  MIN = Math.min(MIN, pilak.get(o));
-                  }
-
-           //System.out.println("min es "+MIN);
-           ORDEN.add(MIN);      //EN LA PILA orden se guardaran los valores en orden de los pesos
-           pilak.remove(pilak.indexOf(MIN));
-           MIN = fat;
-                  } 
-       
-       
-       nn = A.size();// Aqui tengo el valor del numero de nodos
-       
-       
-       while(KRUSKALI == false)
-       {
-       
-            Aristas bk = new Aristas ();
-        //System.out.println("EL PESO MAYOR "+ORDEN.peek());
-            pesoso = ORDEN.peek();
-            
-            bk = BKI.get(ORDEN.pop());//Obtengo la arista más grande
-            bk.setPeso(pesoso);
-            //System.out.println("EVALUO");
-            //System.out.println(bk.getStart()+"--"+bk.getEnd());
-            //System.out.println("");
-            Nodos uno = new Nodos();
-            Nodos dos = new Nodos();
-      
-            uno = A.get(bk.getStart());//Obtengo el nodo inicio de la arista
-            dos = A.get(bk.getEnd());//Obtengo el nodo final de la arista
-      
-            U1 = Integer.toString(bk.getStart());//Convierto a String el valor de inico
-            U2 = Integer.toString(bk.getEnd());//Convierto a String el valor final
-            
-            ArrayList<String> Arl = new ArrayList<String>();
-            ArrayList<String> Arl2 = new ArrayList<String>();
-      
-            Arl = uno.getVecino();
-            Arl.remove(U2);// Quito relacion de inicio con fin
-      
-            Arl2 = dos.getVecino();
-            Arl2.remove(U1);//Quito relacion de fin con inicio
-      
-       //************************************************************************EMPIEZA BFS
-                  Nodos hp = new Nodos();
-                  
-                  
-                  int IB;
-                  int tail;
-                  int v1;
-                  String Ne;
-                  String Aris;
-                  String ArisI;
-                  int ne;
-                  int h1 = 0;
-                  
-                 
-                  
-                  
-                  for(int i=0; i<mat; i++){
-                      hp = A.get(i);
-                      
-                      hp.setVisit(false); // Inicializo todos los nodos en falso
-                  }
-                  
-                  
-                  
-                 
-                  ArrayList<Integer> NKI = new ArrayList<Integer>();//PARA VERIFICAR NODOS
-                  
-                 Random Ibfs = new Random();    //Creo un random
-                  
-            
-                 IB = (int)(Ibfs.nextDouble() *nn);//EMPEZAMOS CON UN NODO ALEATORIO
-                   
-                  //System.out.println("IB ES "+IB);
-                  Nodos hp1 = new Nodos();
-                 Queue<Integer> cola = new LinkedList();// Defino la cola
-                  tail = IB;
-                  hp1 = A.get(IB);
-                  cola.add(tail);
-                  
-                  
-                  while(cola.peek()!= null){
-                      
-                      ArrayList<String> Tonta = new ArrayList<String>();
-                      // System.out.println("El nodo es "+help1.getId());
-                      hp1 = A.get(cola.peek());
-                      tail = cola.peek();
-                      Tonta = hp1.getVecino();
-                      //System.out.println("Los hijos son: "+Tonta);
-                      v1 = Tonta.size();
-                      Nodos hp2 = new Nodos();
-                      for(int i=0; i<v1; i++){
-                          Aristas tree = new Aristas();
-                          Ne = Tonta.get(i);
-                          ne = Integer.parseInt(Ne);
-                          hp2 = A.get(ne);
-                          
-                          //System.out.println("El valor padre "+help1.getVisit());
-                          //System.out.println("El valor hijo "+help2.getVisit());
-                          if(hp2.getVisit()== false){
-                              
-                              tree.setStart(tail);
-                              tree.setEnd(ne);
-                              tree.setName(h1);
-                              
-                              
-                              cola.add(ne);
-                              Aris = tree.getStart()+"--"+tree.getEnd();
-                              
-                              
-                              CKI.put(Aris, tree);//Guardo Aristas
-                              //System.out.println(Aris);//*****AQUI IMPRIMO EN PANTALLA
-                              hp2.setVisit(true);
-                              h1 = h1+1;
-                              
-                              if(NKI.contains(tree.getStart())== false)
-                              {
-                                 NKI.add(tree.getStart());
-                              }
-                              
-                              if(NKI.contains(tree.getEnd())== false)
-                              {
-                                 NKI.add(tree.getEnd());
-                              }
-                              
-                          }
-                          else{
-                              
-                          }
-                          
-                      }
-                      
-                      hp1.setVisit(true);
-                      cola.remove(tail);
-                  }
-       
-       //************************************************************************TERMINA BFS
-           //System.out.println("EL TAMAÑO DE NKI "+NKI.size());
-         
-                  if (CKI.size() == nn-1)//VERIFICO QUE SIGA TENIENDO TODOS LOS NODOS
-                  {
-                      if(Quita.contains(bk.getStart()+"--"+bk.getEnd())== false && Quita.contains(bk.getEnd()+"--"+bk.getStart())== false)
-                      {  
-                   // System.out.println("ELIMINE ");
-                  Quita.add(bk.getStart()+"--"+bk.getEnd());
-                     // System.out.println(bk.getStart()+"--"+bk.getEnd());
-                      }
-               
-                  
-                  }
-                  else          //SI NO TENGO TODOS LOS NODOS VUELVO A PONER LA ARISTA
-                  {
-                      //System.out.println("VUELVO A PONER LA ARISTA");
-                    Nodos Uno = new Nodos();
-                    Nodos Dos = new Nodos();
-      
-                    Uno = A.get(bk.getStart());//Obtengo el nodo inicio de la arista
-                    Dos = A.get(bk.getEnd());//Obtengo el nodo final de la arista
-      
-                    UC1 = Integer.toString(bk.getStart());//Convierto a String el valor de inico
-                    UC2 = Integer.toString(bk.getEnd());//Convierto a String el valor final
-      
-                    ArrayList<String> Al = new ArrayList<String>();
-                    ArrayList<String> Al2 = new ArrayList<String>();
-                    
-                    Al = Uno.getVecino();
-                    Al.add(U2);
-      
-                    Al2 = Dos.getVecino();
-                    Al2.add(U1);                    
-                  
-                  }
-                  
-                  if(ORDEN.empty()== true)
-                   {
-                      KRUSKALI = true;
-                   }
-                  else
-                  {
-                  CKI.clear();
-                  NKI.clear();
-                  h1 = 0;
-                  cola.clear();
-                  }
-                  
-                  
-       } //FIN DE TODO 
-       
-        System.out.println("AQUI EMPIEZA A IMPRIMIR KRUSKAL INVERSO");
-        //System.out.println("ARISTAS ELIMINADAS "+Quita.size());
-        //System.out.println("EL TAMAÑO DE B "+B.size());
-        int MSTKI = 0;
-        Aristas gor = new Aristas();
-                              
-        
-        try {
-                      String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\AEM\\KRUSKALINV.gv";
-                      File archivo = new File(ruta);
-                      BufferedWriter bw = null;
-                      bw = new BufferedWriter(new FileWriter(archivo));
-                      bw.write("Graph G {");
-                      bw.newLine();
-            
-       Aristas AKI = new Aristas();
-       
-                  
-                  Iterator Aristas = B.keySet().iterator();
-                while(Aristas.hasNext())
-                {
-                    Object nextArista = Aristas.next();
-                    AKI = B.get(nextArista);
-                   
-                   if(Quita.contains(AKI.getStart()+"--"+AKI.getEnd())== false && Quita.contains(AKI.getEnd()+"--"+AKI.getStart())== false)//IMPRIMO B - ARISTAS ELIMINADAS
-                   {
-                       
-           
-                    MSTKI = MSTKI + AKI.getPeso();
-                       //System.out.println("EL PESO ES "+AKI.getPeso());
-                    //System.out.println(AKI.getStart()+"--"+AKI.getEnd());
-                    bw.write(AKI.getStart()+"--"+AKI.getEnd()+" [label=\""+AKI.getPeso()+"\"]; ");
-                    bw.newLine();
-                    bw.flush();
-                    EL = EL +1;
-                   }
-                    
-                }
-                
-                    //System.out.println("IMPRIMIO "+EL);
-                 System.out.println("EL PESO TOTAL MST KRUSKAL INVERSO = "+MSTKI);
-                 System.out.println("");
-                 System.out.println("Y YA !!!!!!!");
-                
-                 bw.write("}");
-                      bw.close();
-                      
-                  } catch (IOException ex) {
-                      Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
                   }*/
-        
-       
-                
-            //Y YA!!!!!
-           //**********************************************************************************************DIJSTRA DINAMICO
-           
-           Nodos help = new Nodos();
-           Aristas help7 = new Aristas();
-           Nodos help3 = new Nodos();
-           Nodos help4 = new Nodos();
-               
-                String NS;
-                String NT;
-                int ns;
-                int nt;
-                
-                int Valor1;
-                int Valor2;
-                int Valor3;
-               
-               
-               
-               boolean Dijstra = false;
-              
-             
-             
-              
-                ArrayList<String> Tontita = new ArrayList<String>();
-                
-            
-                double DB = fat+1;
-                Aristas B1 = new Aristas();
-         
-                  NS = NodoS.getText(); //obtengo el valor del teclado lo mando a S.
-                  System.out.println("El nodo de inicio es "+NS);
-                  ns = Integer.parseInt(NS);//convierto el valor "NS" en entero.
-                  
-                  NT = NodoT.getText(); //obtengo el valor del teclado lo mando a S.
-                  System.out.println("El nodo de final es "+NT);
-                  nt = Integer.parseInt(NT);//convierto el valor "NT" en entero.
-                  
-                //System.out.println("fat es "+fat);
-                   
-                  
-                  
-                  Iterator Nodos = A.keySet().iterator();
-                while(Nodos.hasNext()){
-                    Object nextNodos = Nodos.next();
-                    help = A.get(nextNodos);                    
-                    
-                  help3.setDijstra(fat+1);//Inicializo los nodos en infinito
-                }
-                
-               
-                help4 = A.get(ns);
-                help4.setDijstra(0);
-                
-                Iterator Aristas = B.keySet().iterator();
-                while(Aristas.hasNext()){
-                    Object nextAristas = Aristas.next();
-                    help7 = B.get(nextAristas);                    
-                    
-                    help4 = A.get(help7.getStart());
-                    Valor1 = help4.getDijstra();
-                    
-                    help4 = A.get(help7.getEnd());
-                    Valor2 = help4.getDijstra();
-                    
-                    Valor3 = help7.getPeso();
-                    
-                    System.out.println("valor1 "+ Valor1);
-                    System.out.println("valor2 "+ Valor2);
-                    
-                    if(Valor1 != Valor2)
-                    {
-                        help4.setDijstra(Valor3);
-                        System.out.println("El nodo "+ help4.getId());
-                        System.out.println("Le puse "+ Valor3);
-                    }
-                  
-                  
-                  
-                }//fin del while
-                
-                
-         
-                HashMap<Double, Nodos> Order = new HashMap<>();  
-                HashMap<Integer, Nodos> WAY = new HashMap<>();
-                HashMap<Integer, Double> WAY2 = new HashMap<>();
-                HashMap<String, Aristas> S = new HashMap<>();
-                ArrayList<String> VerA = new ArrayList<String>();
-                ArrayList<Integer> VerN = new ArrayList<Integer>();
-                
-                       
-                 
-                 Stack<Double> pila = new Stack<Double>();
-                              
-              
     }//GEN-LAST:event_ERDOSActionPerformed
 
     private void GILBERTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GILBERTActionPerformed
@@ -2081,8 +1716,6 @@ public class Creator extends javax.swing.JFrame {
      
             
            /* Aristas imprime = new Aristas();
-            //Lo mismo el neatBens me puso es try y el catach y no se por que jajaja
-            //Pero funciona.
               try {
             String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\Grafos\\GILBERT.gv";
             File archivo = new File(ruta);
@@ -2222,7 +1855,7 @@ public class Creator extends javax.swing.JFrame {
             Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
               }*/
             //************************************************************************DFS
-            /*String s;
+           /* String s;
                     int SDFS;
                     Nodos help = new Nodos();
                     Nodos help1 = new Nodos();
@@ -2285,7 +1918,7 @@ public class Creator extends javax.swing.JFrame {
             Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
         }*/
             //**********************************************************************DFS ITERATIVO
-              /*Nodos help = new Nodos();
+             /* Nodos help = new Nodos();
                   Nodos help1 = new Nodos();
                   Nodos help2 = new Nodos();
                   String S;
@@ -2448,10 +2081,10 @@ public class Creator extends javax.swing.JFrame {
                   
               } catch (IOException ex) {
             Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
-        }*/                          
+        }  */                       
 
            //******************************************************************************DIJSTRA
-               /*      Nodos help = new Nodos();
+             /*     Nodos help = new Nodos();
            Nodos help3 = new Nodos();
                
                 String NS;
@@ -2540,7 +2173,7 @@ public class Creator extends javax.swing.JFrame {
                           
                                  if(suma<help1.getDijstra())
                                 {
-                                help1.setDijstra(suma);//Aqui asigno el peso de la arista al nodo
+                                help1.setDijstra((int)suma);//Aqui asigno el peso de la arista al nodo
                                 }
                           
                           help1.setPadre(help.getId());
@@ -2599,8 +2232,7 @@ public class Creator extends javax.swing.JFrame {
                   }
                   if(PS.getId()==nt){
                                 Dijstra = true;
-                                    System.out.println("No mames, si llego!!!!");
-                                    System.out.println("");
+                                  
                                 }
                                 else{
                                 help = A.get(PS.getId());
@@ -2924,7 +2556,7 @@ public class Creator extends javax.swing.JFrame {
                  
                   
        //******************************************************************************************************PRIM
-          
+         /* 
             String NS;
              int ns;
              boolean  Prim = false;
@@ -3150,275 +2782,7 @@ public class Creator extends javax.swing.JFrame {
                       Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
                   }
                   
-             
-       //****************************************************************************************KRUSKAL INVERSO         
-                
-       
-        Stack<Integer> ORDEN = new Stack<Integer>();
-        int MIN = fat;
-        int nn;
-        int s;
-        String U1;
-        String U2;
-        String UC1;
-        String UC2;
-        
-        HashMap<String, Aristas> CKI = new HashMap<>();//HASH DE ARISTAS
-        ArrayList<String> Quita = new ArrayList<String>();
-        int pesoso;
-        boolean KRUSKALI = false;
-        int EL = 0;
-       
-       while(pilak.empty()==false){
-                    for(int o=0; o<pilak.size();o++)
-                  {
-                  MIN = Math.min(MIN, pilak.get(o));
-                  }
-
-           //System.out.println("min es "+MIN);
-           ORDEN.add(MIN);      //EN LA PILA orden se guardaran los valores en orden de los pesos
-           pilak.remove(pilak.indexOf(MIN));
-           MIN = fat;
-                  } 
-       
-       
-       nn = A.size();// Aqui tengo el valor del numero de nodos
-       
-       
-       while(KRUSKALI == false)
-       {
-       
-            Aristas bk = new Aristas ();
-        //System.out.println("EL PESO MAYOR "+ORDEN.peek());
-            pesoso = ORDEN.peek();
-            
-            bk = BKI.get(ORDEN.pop());//Obtengo la arista más grande
-            bk.setPeso(pesoso);
-            //System.out.println("EVALUO");
-            //System.out.println(bk.getStart()+"--"+bk.getEnd());
-            //System.out.println("");
-            Nodos uno = new Nodos();
-            Nodos dos = new Nodos();
-      
-            uno = A.get(bk.getStart());//Obtengo el nodo inicio de la arista
-            dos = A.get(bk.getEnd());//Obtengo el nodo final de la arista
-      
-            U1 = Integer.toString(bk.getStart());//Convierto a String el valor de inico
-            U2 = Integer.toString(bk.getEnd());//Convierto a String el valor final
-            
-            ArrayList<String> Arl = new ArrayList<String>();
-            ArrayList<String> Arl2 = new ArrayList<String>();
-      
-            Arl = uno.getVecino();
-            Arl.remove(U2);// Quito relacion de inicio con fin
-      
-            Arl2 = dos.getVecino();
-            Arl2.remove(U1);//Quito relacion de fin con inicio
-      
-       //************************************************************************EMPIEZA BFS
-                  Nodos hp = new Nodos();
-                  
-                  
-                  int IB;
-                  int tail;
-                  int v1;
-                  String Ne;
-                  String Aris;
-                  String ArisI;
-                  int ne;
-                  int h1 = 0;
-                  
-                 
-                  
-                  
-                  for(int i=0; i<mat; i++){
-                      hp = A.get(i);
-                      
-                      hp.setVisit(false); // Inicializo todos los nodos en falso
-                  }
-                  
-                  
-                  
-                 
-                  ArrayList<Integer> NKI = new ArrayList<Integer>();//PARA VERIFICAR NODOS
-                  
-                 Random Ibfs = new Random();    //Creo un random
-                  
-            
-                 IB = (int)(Ibfs.nextDouble() *nn);//EMPEZAMOS CON UN NODO ALEATORIO
-                   
-                  //System.out.println("IB ES "+IB);
-                  Nodos hp1 = new Nodos();
-                 Queue<Integer> cola = new LinkedList();// Defino la cola
-                  tail = IB;
-                  hp1 = A.get(IB);
-                  cola.add(tail);
-                  
-                  
-                  while(cola.peek()!= null){
-                      
-                      ArrayList<String> Tonta = new ArrayList<String>();
-                      // System.out.println("El nodo es "+help1.getId());
-                      hp1 = A.get(cola.peek());
-                      tail = cola.peek();
-                      Tonta = hp1.getVecino();
-                      //System.out.println("Los hijos son: "+Tonta);
-                      v1 = Tonta.size();
-                      Nodos hp2 = new Nodos();
-                      for(int i=0; i<v1; i++){
-                          Aristas tree = new Aristas();
-                          Ne = Tonta.get(i);
-                          ne = Integer.parseInt(Ne);
-                          hp2 = A.get(ne);
-                          
-                          //System.out.println("El valor padre "+help1.getVisit());
-                          //System.out.println("El valor hijo "+help2.getVisit());
-                          if(hp2.getVisit()== false){
-                              
-                              tree.setStart(tail);
-                              tree.setEnd(ne);
-                              tree.setName(h1);
-                              
-                              
-                              cola.add(ne);
-                              Aris = tree.getStart()+"--"+tree.getEnd();
-                              
-                              
-                              CKI.put(Aris, tree);//Guardo Aristas
-                              //System.out.println(Aris);//*****AQUI IMPRIMO EN PANTALLA
-                              hp2.setVisit(true);
-                              h1 = h1+1;
-                              
-                              if(NKI.contains(tree.getStart())== false)
-                              {
-                                 NKI.add(tree.getStart());
-                              }
-                              
-                              if(NKI.contains(tree.getEnd())== false)
-                              {
-                                 NKI.add(tree.getEnd());
-                              }
-                              
-                          }
-                          else{
-                              
-                          }
-                          
-                      }
-                      
-                      hp1.setVisit(true);
-                      cola.remove(tail);
-                  }
-       
-       //************************************************************************TERMINA BFS
-           //System.out.println("EL TAMAÑO DE NKI "+NKI.size());
-         
-                  if (CKI.size() == nn-1)//VERIFICO QUE SIGA TENIENDO TODOS LOS NODOS
-                  {
-                      if(Quita.contains(bk.getStart()+"--"+bk.getEnd())== false && Quita.contains(bk.getEnd()+"--"+bk.getStart())== false)
-                      {  
-                   // System.out.println("ELIMINE ");
-                  Quita.add(bk.getStart()+"--"+bk.getEnd());
-                     // System.out.println(bk.getStart()+"--"+bk.getEnd());
-                      }
-               
-                  
-                  }
-                  else          //SI NO TENGO TODOS LOS NODOS VUELVO A PONER LA ARISTA
-                  {
-                      //System.out.println("VUELVO A PONER LA ARISTA");
-                    Nodos Uno = new Nodos();
-                    Nodos Dos = new Nodos();
-      
-                    Uno = A.get(bk.getStart());//Obtengo el nodo inicio de la arista
-                    Dos = A.get(bk.getEnd());//Obtengo el nodo final de la arista
-      
-                    UC1 = Integer.toString(bk.getStart());//Convierto a String el valor de inico
-                    UC2 = Integer.toString(bk.getEnd());//Convierto a String el valor final
-      
-                    ArrayList<String> Al = new ArrayList<String>();
-                    ArrayList<String> Al2 = new ArrayList<String>();
-                    
-                    Al = Uno.getVecino();
-                    Al.add(U2);
-      
-                    Al2 = Dos.getVecino();
-                    Al2.add(U1);                    
-                  
-                  }
-                  
-                  if(ORDEN.empty()== true)
-                   {
-                      KRUSKALI = true;
-                   }
-                  else
-                  {
-                  CKI.clear();
-                  NKI.clear();
-                  h1 = 0;
-                  cola.clear();
-                  }
-                  
-                  
-       } //FIN DE TODO 
-       
-        System.out.println("AQUI EMPIEZA A IMPRIMIR KRUSKAL INVERSO");
-        //System.out.println("ARISTAS ELIMINADAS "+Quita.size());
-        //System.out.println("EL TAMAÑO DE B "+B.size());
-        int MSTKI = 0;
-        Aristas gor = new Aristas();
-                              
-        
-        try {
-                      String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\AEM\\KRUSKALINV.gv";
-                      File archivo = new File(ruta);
-                      BufferedWriter bw = null;
-                      bw = new BufferedWriter(new FileWriter(archivo));
-                      bw.write("Graph G {");
-                      bw.newLine();
-            
-       Aristas AKI = new Aristas();
-       
-                  
-                  Iterator Aristas = B.keySet().iterator();
-                while(Aristas.hasNext())
-                {
-                    Object nextArista = Aristas.next();
-                    AKI = B.get(nextArista);
-                   
-                   if(Quita.contains(AKI.getStart()+"--"+AKI.getEnd())== false && Quita.contains(AKI.getEnd()+"--"+AKI.getStart())== false)//IMPRIMO B - ARISTAS ELIMINADAS
-                   {
-                       
-           
-                    MSTKI = MSTKI + AKI.getPeso();
-                       //System.out.println("EL PESO ES "+AKI.getPeso());
-                    //System.out.println(AKI.getStart()+"--"+AKI.getEnd());
-                    bw.write(AKI.getStart()+"--"+AKI.getEnd()+" [label=\""+AKI.getPeso()+"\"]; ");
-                    bw.newLine();
-                    bw.flush();
-                    EL = EL +1;
-                   }
-                    
-                }
-                
-                    //System.out.println("IMPRIMIO "+EL);
-                 System.out.println("EL PESO TOTAL MST KRUSKAL INVERSO = "+MSTKI);
-                 System.out.println("");
-                 System.out.println("Y YA !!!!!!!");
-                
-                 bw.write("}");
-                      bw.close();
-                      
-                  } catch (IOException ex) {
-                      Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
-                  }
-        
-
-           
-          //Y YA!!!
-            
-
-
+      */
     }//GEN-LAST:event_GILBERTActionPerformed
 
     private void GEOGRAFICOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GEOGRAFICOActionPerformed
@@ -3589,7 +2953,7 @@ public class Creator extends javax.swing.JFrame {
     Aristas Ayuda = new Aristas();
 
                   try{
-                      String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\AEM\\GEOGRAFICO.gv";
+                      String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\Grafos PARA DIJSTRA\\DD\\GEOGRAFICO.gv";
                       File archivo = new File(ruta);
                       BufferedWriter bw = null;
                       bw = new BufferedWriter(new FileWriter(archivo));
@@ -3819,7 +3183,7 @@ public class Creator extends javax.swing.JFrame {
             Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
         }*/
           //************************************************************************DFS ITERATIVO
-          /*Nodos help = new Nodos();
+         /* Nodos help = new Nodos();
                   Nodos help1 = new Nodos();
                   Nodos help2 = new Nodos();
                   String S;
@@ -4236,7 +3600,8 @@ public class Creator extends javax.swing.JFrame {
                       Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
                   }*/
             
-       int MAX = 0;
+                //**********************************************************************************************KRUSKAL
+                    int MAX = 0;
                     Stack<Integer> orden = new Stack<Integer>();
                     HashMap<String, Aristas> K = new HashMap<>();
                     String raya;
@@ -4456,7 +3821,7 @@ public class Creator extends javax.swing.JFrame {
                  
                   
        //******************************************************************************************************PRIM
-          
+          /*
             String NS;
              int ns;
              boolean  Prim = false;
@@ -4682,273 +4047,8 @@ public class Creator extends javax.swing.JFrame {
                       Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
                   }
                   
-             
-       //****************************************************************************************KRUSKAL INVERSO         
-                
-       
-        Stack<Integer> ORDEN = new Stack<Integer>();
-        int MIN = fat;
-        int nn;
-        int s;
-        String U1;
-        String U2;
-        String UC1;
-        String UC2;
-        
-        HashMap<String, Aristas> CKI = new HashMap<>();//HASH DE ARISTAS
-        ArrayList<String> Quita = new ArrayList<String>();
-        int pesoso;
-        boolean KRUSKALI = false;
-        int EL = 0;
-       
-       while(pilak.empty()==false){
-                    for(int o=0; o<pilak.size();o++)
-                  {
-                  MIN = Math.min(MIN, pilak.get(o));
-                  }
-
-           //System.out.println("min es "+MIN);
-           ORDEN.add(MIN);      //EN LA PILA orden se guardaran los valores en orden de los pesos
-           pilak.remove(pilak.indexOf(MIN));
-           MIN = fat;
-                  } 
-       
-       
-       nn = A.size();// Aqui tengo el valor del numero de nodos
-       
-       
-       while(KRUSKALI == false)
-       {
-       
-            Aristas bk = new Aristas ();
-        //System.out.println("EL PESO MAYOR "+ORDEN.peek());
-            pesoso = ORDEN.peek();
-            
-            bk = BKI.get(ORDEN.pop());//Obtengo la arista más grande
-            bk.setPeso(pesoso);
-            //System.out.println("EVALUO");
-            //System.out.println(bk.getStart()+"--"+bk.getEnd());
-            //System.out.println("");
-            Nodos uno = new Nodos();
-            Nodos dos = new Nodos();
+             */
       
-            uno = A.get(bk.getStart());//Obtengo el nodo inicio de la arista
-            dos = A.get(bk.getEnd());//Obtengo el nodo final de la arista
-      
-            U1 = Integer.toString(bk.getStart());//Convierto a String el valor de inico
-            U2 = Integer.toString(bk.getEnd());//Convierto a String el valor final
-            
-            ArrayList<String> Arl = new ArrayList<String>();
-            ArrayList<String> Arl2 = new ArrayList<String>();
-      
-            Arl = uno.getVecino();
-            Arl.remove(U2);// Quito relacion de inicio con fin
-      
-            Arl2 = dos.getVecino();
-            Arl2.remove(U1);//Quito relacion de fin con inicio
-      
-       //************************************************************************EMPIEZA BFS
-                  Nodos hp = new Nodos();
-                  
-                  
-                  int IB;
-                  int tail;
-                  int v1;
-                  String Ne;
-                  String Aris;
-                  String ArisI;
-                  int ne;
-                  int h1 = 0;
-                  
-                 
-                  
-                  
-                  for(int i=0; i<mat; i++){
-                      hp = A.get(i);
-                      
-                      hp.setVisit(false); // Inicializo todos los nodos en falso
-                  }
-                  
-                  
-                  
-                 
-                  ArrayList<Integer> NKI = new ArrayList<Integer>();//PARA VERIFICAR NODOS
-                  
-                 Random Ibfs = new Random();    //Creo un random
-                  
-            
-                 IB = (int)(Ibfs.nextDouble() *nn);//EMPEZAMOS CON UN NODO ALEATORIO
-                   
-                  //System.out.println("IB ES "+IB);
-                  Nodos hp1 = new Nodos();
-                 Queue<Integer> cola = new LinkedList();// Defino la cola
-                  tail = IB;
-                  hp1 = A.get(IB);
-                  cola.add(tail);
-                  
-                  
-                  while(cola.peek()!= null){
-                      
-                      ArrayList<String> Tonta = new ArrayList<String>();
-                      // System.out.println("El nodo es "+help1.getId());
-                      hp1 = A.get(cola.peek());
-                      tail = cola.peek();
-                      Tonta = hp1.getVecino();
-                      //System.out.println("Los hijos son: "+Tonta);
-                      v1 = Tonta.size();
-                      Nodos hp2 = new Nodos();
-                      for(int i=0; i<v1; i++){
-                          Aristas tree = new Aristas();
-                          Ne = Tonta.get(i);
-                          ne = Integer.parseInt(Ne);
-                          hp2 = A.get(ne);
-                          
-                          //System.out.println("El valor padre "+help1.getVisit());
-                          //System.out.println("El valor hijo "+help2.getVisit());
-                          if(hp2.getVisit()== false){
-                              
-                              tree.setStart(tail);
-                              tree.setEnd(ne);
-                              tree.setName(h1);
-                              
-                              
-                              cola.add(ne);
-                              Aris = tree.getStart()+"--"+tree.getEnd();
-                              
-                              
-                              CKI.put(Aris, tree);//Guardo Aristas
-                              //System.out.println(Aris);//*****AQUI IMPRIMO EN PANTALLA
-                              hp2.setVisit(true);
-                              h1 = h1+1;
-                              
-                              if(NKI.contains(tree.getStart())== false)
-                              {
-                                 NKI.add(tree.getStart());
-                              }
-                              
-                              if(NKI.contains(tree.getEnd())== false)
-                              {
-                                 NKI.add(tree.getEnd());
-                              }
-                              
-                          }
-                          else{
-                              
-                          }
-                          
-                      }
-                      
-                      hp1.setVisit(true);
-                      cola.remove(tail);
-                  }
-       
-       //************************************************************************TERMINA BFS
-           //System.out.println("EL TAMAÑO DE NKI "+NKI.size());
-         
-                  if (CKI.size() == nn-1)//VERIFICO QUE SIGA TENIENDO TODOS LOS NODOS
-                  {
-                      if(Quita.contains(bk.getStart()+"--"+bk.getEnd())== false && Quita.contains(bk.getEnd()+"--"+bk.getStart())== false)
-                      {  
-                   // System.out.println("ELIMINE ");
-                  Quita.add(bk.getStart()+"--"+bk.getEnd());
-                     // System.out.println(bk.getStart()+"--"+bk.getEnd());
-                      }
-               
-                  
-                  }
-                  else          //SI NO TENGO TODOS LOS NODOS VUELVO A PONER LA ARISTA
-                  {
-                      //System.out.println("VUELVO A PONER LA ARISTA");
-                    Nodos Uno = new Nodos();
-                    Nodos Dos = new Nodos();
-      
-                    Uno = A.get(bk.getStart());//Obtengo el nodo inicio de la arista
-                    Dos = A.get(bk.getEnd());//Obtengo el nodo final de la arista
-      
-                    UC1 = Integer.toString(bk.getStart());//Convierto a String el valor de inico
-                    UC2 = Integer.toString(bk.getEnd());//Convierto a String el valor final
-      
-                    ArrayList<String> Al = new ArrayList<String>();
-                    ArrayList<String> Al2 = new ArrayList<String>();
-                    
-                    Al = Uno.getVecino();
-                    Al.add(U2);
-      
-                    Al2 = Dos.getVecino();
-                    Al2.add(U1);                    
-                  
-                  }
-                  
-                  if(ORDEN.empty()== true)
-                   {
-                      KRUSKALI = true;
-                   }
-                  else
-                  {
-                  CKI.clear();
-                  NKI.clear();
-                  h1 = 0;
-                  cola.clear();
-                  }
-                  
-                  
-       } //FIN DE TODO 
-       
-        System.out.println("AQUI EMPIEZA A IMPRIMIR KRUSKAL INVERSO");
-        //System.out.println("ARISTAS ELIMINADAS "+Quita.size());
-        //System.out.println("EL TAMAÑO DE B "+B.size());
-        int MSTKI = 0;
-        Aristas gor = new Aristas();
-                              
-        
-        try {
-                      String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\AEM\\KRUSKALINV.gv";
-                      File archivo = new File(ruta);
-                      BufferedWriter bw = null;
-                      bw = new BufferedWriter(new FileWriter(archivo));
-                      bw.write("Graph G {");
-                      bw.newLine();
-            
-       Aristas AKI = new Aristas();
-       
-                  
-                  Iterator Aristas = B.keySet().iterator();
-                while(Aristas.hasNext())
-                {
-                    Object nextArista = Aristas.next();
-                    AKI = B.get(nextArista);
-                   
-                   if(Quita.contains(AKI.getStart()+"--"+AKI.getEnd())== false && Quita.contains(AKI.getEnd()+"--"+AKI.getStart())== false)//IMPRIMO B - ARISTAS ELIMINADAS
-                   {
-                       
-           
-                    MSTKI = MSTKI + AKI.getPeso();
-                       //System.out.println("EL PESO ES "+AKI.getPeso());
-                    //System.out.println(AKI.getStart()+"--"+AKI.getEnd());
-                    bw.write(AKI.getStart()+"--"+AKI.getEnd()+" [label=\""+AKI.getPeso()+"\"]; ");
-                    bw.newLine();
-                    bw.flush();
-                    EL = EL +1;
-                   }
-                    
-                }
-                
-                    //System.out.println("IMPRIMIO "+EL);
-                 System.out.println("EL PESO TOTAL MST KRUSKAL INVERSO = "+MSTKI);
-                 System.out.println("");
-                
-                 bw.write("}");
-                      bw.close();
-                      
-                  } catch (IOException ex) {
-                      Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
-                  }          
-                
-                
-            
-            
-              
-              //Y YA!!!!
     }//GEN-LAST:event_GEOGRAFICOActionPerformed
 
     private void EntraProbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntraProbaActionPerformed
@@ -5340,7 +4440,7 @@ public class Creator extends javax.swing.JFrame {
             Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
         }*/
          //********************************************************************************DFS ITERATIVO
-        /* Nodos help = new Nodos();
+         /*Nodos help = new Nodos();
                   Nodos help1 = new Nodos();
                   Nodos help2 = new Nodos();
                   String S;
@@ -5474,7 +4574,7 @@ public class Creator extends javax.swing.JFrame {
                   
                   try { 
                   
-                  String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\Grafos\\DFSiter.txt";
+                  String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\Grafos\\DFSiter.gv";
                   File archivo12 = new File(ruta);
                   BufferedWriter bw1 = null;
                   bw1 = new BufferedWriter(new FileWriter(archivo12));
@@ -5507,7 +4607,7 @@ public class Creator extends javax.swing.JFrame {
             Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
         }*/
          //*****************************************************************************************DIJSTRA
-       /* Nodos help = new Nodos();
+          /* Nodos help = new Nodos();
            Nodos help3 = new Nodos();
                
                 String NS;
@@ -5993,7 +5093,7 @@ public class Creator extends javax.swing.JFrame {
                  
                   
        //******************************************************************************************************PRIM
-          
+         /* 
             String NS;
              int ns;
              boolean  Prim = false;
@@ -6219,280 +5319,7 @@ public class Creator extends javax.swing.JFrame {
                       Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
                   }
                   
-             
-       //****************************************************************************************KRUSKAL INVERSO         
-                
-       
-        Stack<Integer> ORDEN = new Stack<Integer>();
-        int MIN = fat;
-        int nn;
-        int s;
-        String U1;
-        String U2;
-        String UC1;
-        String UC2;
-        
-        HashMap<String, Aristas> CKI = new HashMap<>();//HASH DE ARISTAS
-        ArrayList<String> Quita = new ArrayList<String>();
-        int pesoso;
-        boolean KRUSKALI = false;
-        int EL = 0;
-       
-       while(pilak.empty()==false){
-                    for(int o=0; o<pilak.size();o++)
-                  {
-                  MIN = Math.min(MIN, pilak.get(o));
-                  }
-
-           //System.out.println("min es "+MIN);
-           ORDEN.add(MIN);      //EN LA PILA orden se guardaran los valores en orden de los pesos
-           pilak.remove(pilak.indexOf(MIN));
-           MIN = fat;
-                  } 
-       
-       
-       nn = A.size();// Aqui tengo el valor del numero de nodos
-       
-       
-       while(KRUSKALI == false)
-       {
-       
-            Aristas bk = new Aristas ();
-        //System.out.println("EL PESO MAYOR "+ORDEN.peek());
-            pesoso = ORDEN.peek();
-            
-            bk = BKI.get(ORDEN.pop());//Obtengo la arista más grande
-            bk.setPeso(pesoso);
-            //System.out.println("EVALUO");
-            //System.out.println(bk.getStart()+"--"+bk.getEnd());
-            //System.out.println("");
-            Nodos uno = new Nodos();
-            Nodos dos = new Nodos();
-      
-            uno = A.get(bk.getStart());//Obtengo el nodo inicio de la arista
-            dos = A.get(bk.getEnd());//Obtengo el nodo final de la arista
-      
-            U1 = Integer.toString(bk.getStart());//Convierto a String el valor de inico
-            U2 = Integer.toString(bk.getEnd());//Convierto a String el valor final
-            
-            ArrayList<String> Arl = new ArrayList<String>();
-            ArrayList<String> Arl2 = new ArrayList<String>();
-      
-            Arl = uno.getVecino();
-            Arl.remove(U2);// Quito relacion de inicio con fin
-      
-            Arl2 = dos.getVecino();
-            Arl2.remove(U1);//Quito relacion de fin con inicio
-      
-       //************************************************************************EMPIEZA BFS
-                  Nodos hp = new Nodos();
-                  
-                  
-                  int IB;
-                  int tail;
-                  int v1;
-                  String Ne;
-                  String Aris;
-                  String ArisI;
-                  int ne;
-                  int h1 = 0;
-                  
-                 
-                  
-                  
-                  for(int i=0; i<mat; i++){
-                      hp = A.get(i);
-                      
-                      hp.setVisit(false); // Inicializo todos los nodos en falso
-                      
-                  }
-                  
-                  
-                  
-                 
-                  ArrayList<Integer> NKI = new ArrayList<Integer>();//PARA VERIFICAR NODOS
-                  
-                 Random Ibfs = new Random();    //Creo un random
-                  
-            
-                 IB = (int)(Ibfs.nextDouble() *nn);//EMPEZAMOS CON UN NODO ALEATORIO
-                   
-                  //System.out.println("IB ES "+IB);
-                  Nodos hp1 = new Nodos();
-                 Queue<Integer> cola = new LinkedList();// Defino la cola
-                  tail = IB;
-                  hp1 = A.get(IB);
-                  cola.add(tail);
-                  
-                  
-                  while(cola.peek()!= null){
-                      
-                      ArrayList<String> Tonta2 = new ArrayList<String>();
-                      // System.out.println("El nodo es "+help1.getId());
-                      hp1 = A.get(cola.peek());
-                      tail = cola.peek();
-                      Tonta2 = hp1.getVecino();
-                      //System.out.println("Los hijos son: "+Tonta);
-                      v1 = Tonta2.size();
-                      Nodos hp2 = new Nodos();
-                      for(int i=0; i<v1; i++){
-                          Aristas tree = new Aristas();
-                          Ne = Tonta2.get(i);
-                          ne = Integer.parseInt(Ne);
-                          hp2 = A.get(ne);
-                          
-                          //System.out.println("El valor padre "+help1.getVisit());
-                          //System.out.println("El valor hijo "+help2.getVisit());
-                          if(hp2.getVisit()== false){
-                              
-                              tree.setStart(tail);
-                              tree.setEnd(ne);
-                              tree.setName(h1);
-                              
-                              
-                              cola.add(ne);
-                              Aris = tree.getStart()+"--"+tree.getEnd();
-                              
-                              
-                              CKI.put(Aris, tree);//Guardo Aristas
-                              //System.out.println(Aris);//*****AQUI IMPRIMO EN PANTALLA
-                              hp2.setVisit(true);
-                              h1 = h1+1;
-                              
-                              if(NKI.contains(tree.getStart())== false)
-                              {
-                                 NKI.add(tree.getStart());
-                              }
-                              
-                              if(NKI.contains(tree.getEnd())== false)
-                              {
-                                 NKI.add(tree.getEnd());
-                              }
-                              
-                          }
-                          else{
-                              
-                          }
-                          
-                      }
-                      
-                      hp1.setVisit(true);
-                      cola.remove(tail);
-                  }
-       
-       //************************************************************************TERMINA BFS
-           //System.out.println("EL TAMAÑO DE NKI "+NKI.size());
-         
-                  if (CKI.size() == nn-1)//VERIFICO QUE SIGA TENIENDO TODOS LOS NODOS
-                  {
-                      if(Quita.contains(bk.getStart()+"--"+bk.getEnd())== false && Quita.contains(bk.getEnd()+"--"+bk.getStart())== false)
-                      {  
-                   // System.out.println("ELIMINE ");
-                  Quita.add(bk.getStart()+"--"+bk.getEnd());
-                     // System.out.println(bk.getStart()+"--"+bk.getEnd());
-                      }
-               
-                  
-                  }
-                  else          //SI NO TENGO TODOS LOS NODOS VUELVO A PONER LA ARISTA
-                  {
-                      //System.out.println("VUELVO A PONER LA ARISTA");
-                    Nodos Uno = new Nodos();
-                    Nodos Dos = new Nodos();
-      
-                    Uno = A.get(bk.getStart());//Obtengo el nodo inicio de la arista
-                    Dos = A.get(bk.getEnd());//Obtengo el nodo final de la arista
-      
-                    UC1 = Integer.toString(bk.getStart());//Convierto a String el valor de inico
-                    UC2 = Integer.toString(bk.getEnd());//Convierto a String el valor final
-      
-                    ArrayList<String> Al = new ArrayList<String>();
-                    ArrayList<String> Al2 = new ArrayList<String>();
-                    
-                    Al = Uno.getVecino();
-                    Al.add(U2);
-      
-                    Al2 = Dos.getVecino();
-                    Al2.add(U1);                    
-                  
-                  }
-                  
-                 
-                  //System.out.println("QUITA ES "+Quita.size());
-                  
-                     //ORDEN.empty()== true     
-                  if(B.size()- Quita.size()== A.size()-1)
-                   {
-                      KRUSKALI = true;
-                   }
-                  else
-                  {
-                  CKI.clear();
-                  NKI.clear();
-                  h1 = 0;
-                  cola.clear();
-                     
-                  }
-                  
-                  
-       } //FIN DE TODO 
-       
-        System.out.println("AQUI EMPIEZA A IMPRIMIR KRUSKAL INVERSO");
-        //System.out.println("ARISTAS ELIMINADAS "+Quita.size());
-        //System.out.println("EL TAMAÑO DE B "+B.size());
-        int MSTKI = 0;
-        Aristas gor = new Aristas();
-                              
-        
-        try {
-                      String ruta = "C:\\Users\\ivaro_000\\Desktop\\Proyectos Grafos - Algoritmos\\Grafos PARA DIJSTRA\\KRUSKALINV.gv";
-                      File archivo = new File(ruta);
-                      BufferedWriter bw = null;
-                      bw = new BufferedWriter(new FileWriter(archivo));
-                      bw.write("Graph G {");
-                      bw.newLine();
-            
-       Aristas AKI = new Aristas();
-       
-                  
-                  Iterator Aristas = B.keySet().iterator();
-                while(Aristas.hasNext())
-                {
-                    Object nextArista = Aristas.next();
-                    AKI = B.get(nextArista);
-                   
-                   if(Quita.contains(AKI.getStart()+"--"+AKI.getEnd())== false && Quita.contains(AKI.getEnd()+"--"+AKI.getStart())== false)//IMPRIMO B - ARISTAS ELIMINADAS
-                   {
-                       
-           
-                    MSTKI = MSTKI + AKI.getPeso();
-                       //System.out.println("EL PESO ES "+AKI.getPeso());
-                    //System.out.println(AKI.getStart()+"--"+AKI.getEnd());
-                    bw.write(AKI.getStart()+"--"+AKI.getEnd()+" [label=\""+AKI.getPeso()+"\"]; ");
-                    bw.newLine();
-                    bw.flush();
-                    EL = EL +1;
-                   }
-                    
-                }
-                
-                    //System.out.println("IMPRIMIO "+EL);
-                 System.out.println("EL PESO TOTAL MST KRUSKAL INVERSO = "+MSTKI);
-                 System.out.println("");
-                 System.out.println("Y YA !!!!!!!");
-                
-                 bw.write("}");
-                      bw.close();
-                      
-                  } catch (IOException ex) {
-                      Logger.getLogger(Creator.class.getName()).log(Level.SEVERE, null, ex);
-                  }
-        
-        
-              
-                
-            //Y YA!!!!
-            
+      */
     }//GEN-LAST:event_BARABASIActionPerformed
 
     private void EntraGradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntraGradoActionPerformed
